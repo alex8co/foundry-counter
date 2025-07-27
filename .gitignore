@@ -1,12 +1,21 @@
-# Compiler files
+# Dependencies
+node_modules/
+
+# Foundry build artifacts
 cache/
 out/
-
-# Ignores development broadcast logs
 broadcast/
-
-# Docs
+coverage/
 docs/
+
+# Logs
+*.log
 
 # Dotenv file
 .env
+
+# OS-specific
+.DS_Store
+
+# Editor-specific
+.vscode/
