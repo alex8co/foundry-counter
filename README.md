@@ -1,8 +1,9 @@
 # run  local
+```
 export PRIVATE_KEY="0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80"
 export Contract_Address="0xC2FE2F49B3a1384aEdFAae127F054FAf216eF684"
 cast balance 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266 --ether --rpc-url http://127.0.0.1:8545
-
+```
 
 # deploy
 ```
