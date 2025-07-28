@@ -1,11 +1,30 @@
 # run  local
+
+## deploy to local
 ```
+anvil --fork-url https://reth-ethereum.ithaca.xyz/rpc
 export PRIVATE_KEY="0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80"
-export Contract_Address="0xC2FE2F49B3a1384aEdFAae127F054FAf216eF684"
-cast balance 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266 --ether --rpc-url http://127.0.0.1:8545
+forge script script/Counter.s.sol --rpc-url http://127.0.0.1:8545 --broadcast --private-key $PRIVATE_KEY
 ```
 
-# deploy
+## get Contract
+```
+Contract Address: 0xd3873FDF150b3fFFb447d3701DFD234DF452F367
+```
+
+## test Contract by local
+```
+export Contract_Address="0xd3873FDF150b3fFFb447d3701DFD234DF452F367"
+export Accounts_Address="0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"
+cast balance $Accounts_Address --ether --rpc-url http://127.0.0.1:8545
+cast send $Contract_Address "setNumber(uint256)" 0x1000 --private-key $PRIVATE_KEY --rpc-url http://127.0.0.1:8545
+cast call $Contract_Address "number()" --rpc-url http://127.0.0.1:8545
+cast send $Contract_Address "increment()" --private-key $PRIVATE_KEY --rpc-url http://127.0.0.1:8545
+cast call $Contract_Address "number()" --rpc-url http://127.0.0.1:8545
+cast balance $Accounts_Address --ether --rpc-url http://127.0.0.1:8545
+```
+
+# deploy to testnet
 ```
   You need to provide your Sepolia RPC URL and a private key to Foundry. The best way is to use a .env file.
 
