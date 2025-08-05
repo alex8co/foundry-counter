@@ -19,3 +19,7 @@ docs/
 
 # Editor-specific
 .vscode/
+
+# ai
+prompt_ethereum_smart_contract.txt
+my_gemini.sh
